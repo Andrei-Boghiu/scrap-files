@@ -4,7 +4,7 @@ const text = "whatever text content you want"
   if (requirements) {
     async function getItemFromText(itemParam) { // in this case itemParam will be a string
       const regex = new RegExp(`/${itemParam} (\w+)/`)
-      return caseSubject.match(regex) ?? "ERROR" 
+      return text.match(regex) ?? "ERROR" 
     }
 
     console.log(getItemFromText("you"))
