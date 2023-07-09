@@ -1,0 +1,1 @@
+This is a game challenge from the [The Complete JavaScript Course 2023](https://www.udemy.com/course/the-complete-javascript-course/) from [Jonas Schmedtmann](https://www.udemy.com/user/jonasschmedtmann/) on [Udemy](https://www.udemy.com) 
