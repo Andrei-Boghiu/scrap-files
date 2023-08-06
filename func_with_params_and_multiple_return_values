@@ -1,0 +1,48 @@
+// function that takes in a couple of params and returns multiple results, ifParams set to true by default
+function main( nrOne, nrTwo, ifMultiplication = true, ifAddition = true, ifSubtraction = true ) {
+    // global variables 
+    let multiplication = new Error(`ifMultiplication param set to 'false'`);
+    let addition = new Error(`ifAddition param set to 'false'`);
+    let subtraction = new Error(`ifSubtraction param set to 'false'`);
+  
+    // having ifMultiplication param allows us to choose if a process is being executed or not in the function in order to save processing power
+    if (ifMultiplication) {
+      multiplication = nrOne * nrTwo;
+    }
+  
+    if (ifAddition) {
+      addition = nrOne + nrTwo;
+    }
+  
+    if (ifSubtraction) {
+      subtraction = nrOne - nrTwo;
+    }
+    // return all the needed variables as an object
+    return { multiplication, addition, subtraction };
+  }
+  
+  // run the function once and get the values that you need
+  const { multiplication, addition} = main(2, 3, true, true, false);
+  
+  console.log(multiplication, addition); // subtraction will return the error because we defined ifSubtraction with false when we called the function, but also asking for subtraction object when defining the new variables
+  
+  // if you need to run the function multiple times, you can rename the returned variables
+  const {
+    multiplication: multiplicationTwo,
+    addition: additionTwo,
+    subtraction: subtractionTwo,
+  } = main(3, 1);
+  
+  // refer to the returned variable by their new names
+  console.log(multiplicationTwo, additionTwo, subtractionTwo);
+
+  
+  const testThree = main(2, 6);
+  
+  const {
+    multiplication: multiplicationThree,
+    addition: additionTree,
+    subtraction: subtractionThree,
+  } = testThree;
+  
+  console.log(multiplicationThree, additionTree, subtractionThree);
